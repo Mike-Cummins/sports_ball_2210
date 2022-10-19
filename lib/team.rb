@@ -53,5 +53,10 @@ class Team
       "$#{cost.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse}"
     end
 
-
+    def players_by_last_name
+      last_names = roster.map do |player|
+        player.last_name
+      end.sort.join(', ')
+      last_names
+    end
 end
