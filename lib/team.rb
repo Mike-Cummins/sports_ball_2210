@@ -47,4 +47,11 @@ class Team
       }
       deets
     end
-  end
+
+    def average_cost_of_player
+      cost = self.total_value / self.player_count
+      "$#{cost.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse}"
+    end
+
+
+end
